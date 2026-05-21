@@ -1,71 +1,120 @@
-# fridge.pk
+# 🧊 fridge.pk - Smart Cooling Marketplace
 
-Pakistan's smart inverter cooling e-commerce platform — React frontend + Express/MongoDB backend.
+**fridge.pk** is Pakistan's premier specialized e-commerce platform for cooling appliances. Built with a modern **MERN stack** (MongoDB, Express, React, Node.js), it integrates cutting-edge **AI Consultation** and **AR Visualization** to help users find the perfect refrigerator, air conditioner, or deep freezer for their home.
 
-**Developer:** [Farmanullah Ansari](https://farmanullah1.github.io/My-Portfolio)
+[![Developer: Farmanullah Ansari](https://img.shields.io/badge/Developer-Farmanullah%20Ansari-0A3D62?style=for-the-badge)](https://farmanullah1.github.io/My-Portfolio)
+![Tech: React 19](https://img.shields.io/badge/Frontend-React%2019-61DAFB?style=for-the-badge&logo=react)
+![Tech: Node.js](https://img.shields.io/badge/Backend-Node.js-339933?style=for-the-badge&logo=nodedotjs)
+![Tech: MongoDB](https://img.shields.io/badge/Database-MongoDB-47A248?style=for-the-badge&logo=mongodb)
+![Tech: Google Gemini](https://img.shields.io/badge/AI-Google%20Gemini-4285F4?style=for-the-badge&logo=google)
 
-## Quick start
+---
+
+## ✨ Key Features
+
+### 🤖 AI-Powered Consultation
+Integrated with **Google Gemini 1.5 Flash**, the platform offers a "Consultation Assist" chatbot that guides users based on room dimensions, family size, and local voltage conditions.
+
+### 📐 3D AR Visualizer
+A virtual room planner that allows users to simulate how different appliances will fit in their space before purchase, complete with virtual spacing guidelines.
+
+### ⚡ Energy & Bill Calculator
+Specialized calculator for Pakistan's energy market. It compares digital inverter efficiency, estimates solar offsets, and predicts monthly bill savings.
+
+### 🎙️ Advanced Search & Discovery
+- **Voice Search:** Speech-to-text integration with an active glowing microphone interface.
+- **Smart Autocomplete:** Real-time suggestions matching live appliance catalogs with pricing and images.
+- **Appliance Matcher Quiz:** A gamified experience to find the best-fit cooling solution.
+
+### 🛒 E-commerce Core
+- **Flash Sales:** Time-limited discounts with real-time countdown timers.
+- **Order Tracking:** Comprehensive tracking system for delivery updates.
+- **Wishlist & Compare:** Side-by-side comparison of appliance specifications.
+- **Seller Dashboard:** Specialized workbench for merchants to manage cooling appliance inventories and analytics.
+
+### 🌓 Modern UI/UX
+- **Dark Mode:** Fully stateful theme synchronization with `localStorage`.
+- **Responsive Design:** Optimized for all screen sizes using **Tailwind CSS 4**.
+- **Smooth Animations:** Powered by **Motion** (Framer Motion) for a fluid feel.
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **Framework:** React 19 (TypeScript)
+- **Bundler:** Vite
+- **Styling:** Tailwind CSS 4
+- **Icons:** Lucide-React
+- **Animations:** Motion
+- **AI Integration:** `@google/genai` (Client-side lazy initialization)
+
+### Backend
+- **Runtime:** Node.js
+- **Framework:** Express
+- **Database:** MongoDB (via Mongoose)
+- **Authentication:** JWT (JSON Web Tokens) & Bcryptjs
+- **Environment:** TSX for development, TypeScript for production
+
+---
+
+## 🚀 Getting Started
 
 ### Prerequisites
-
 - Node.js 18+
-- MongoDB running locally (`mongodb://localhost:27017`)
+- MongoDB instance (Local or Atlas)
+- Google Gemini API Key (for AI features)
 
-### 1. Install dependencies
+### Installation
 
-```bash
-npm run install:all
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/farmanullah1/fridge.pk.git
+   cd fridge.pk
+   ```
+
+2. **Install all dependencies:**
+   ```bash
+   npm run install:all
+   ```
+
+3. **Configure Environment Variables:**
+   - Create `Backend/.env` (see `.env.example` in Backend folder)
+   - Create `Frontend/.env` (for Gemini API key if used client-side)
+
+4. **Seed the database (Optional):**
+   ```bash
+   npm run seed
+   ```
+
+5. **Run Development Servers:**
+   ```bash
+   npm run dev
+   ```
+
+---
+
+## 📁 Project Structure
+
+```text
+fridge.pk/
+├── Backend/                # Express & Node.js Server
+│   ├── src/
+│   │   ├── models/        # Mongoose Schemas (User, Order, Product, etc.)
+│   │   ├── routes/        # API Endpoints
+│   │   ├── middleware/    # Auth & Error handling
+│   │   └── index.ts       # Server Entry Point
+├── Frontend/               # React & Vite Application
+│   ├── src/
+│   │   ├── components/    # UI Views (Home, AI, AR, Calculator, etc.)
+│   │   ├── lib/           # API clients
+│   │   └── types.ts       # TypeScript definitions
+└── package.json           # Root scripts for mono-repo management
 ```
 
-### 2. Configure environment
+---
 
-Backend (`Backend/.env`):
+## 📜 License
+This project is for demonstration and portfolio purposes. All rights reserved.
 
-```
-PORT=5000
-MONGO_URI=mongodb://localhost:27017/fridge.pk
-JWT_SECRET=fridge.pk_jwt_secret_key_2024_super_secure
-NODE_ENV=development
-```
-
-### 3. Seed database (optional — API auto-seeds products on first start)
-
-```bash
-npm run seed
-```
-
-Creates demo users:
-
-- `farman.ansari@fridge.pk` / `fringe123`
-- `demo@fridge.pk` / `fringe123` (seller)
-
-### 4. Run development servers
-
-**Both at once (recommended):**
-
-```bash
-npm install
-npm run install:all
-npm run dev
-```
-
-Or separately — API on port 5000, frontend on http://localhost:5173 (proxies `/api`).
-
-**Seller demo:** `demo@fridge.pk` / `fringe123`
-
-## API overview
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/health` | Health check |
-| POST | `/api/auth/register` | Sign up |
-| POST | `/api/auth/login` | Login |
-| GET | `/api/products` | Product catalog |
-| POST | `/api/orders` | Place order |
-| GET | `/api/orders` | User orders (auth) |
-| GET | `/api/orders/track/:id` | Track order |
-| POST | `/api/ai/consult` | AI assistant |
-
-See `save_progress.md` for full development log.
-"# fridge.pk-E-commerce-platform-React" 
-"# fridge.pk-E-commerce-platform-React" 
+**Developed by Farmanullah Ansari** - [Portfolio](https://farmanullah1.github.io/My-Portfolio)
