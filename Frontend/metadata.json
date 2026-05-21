@@ -1,0 +1,6 @@
+{
+  "name": "Fridge.pk",
+  "description": "Pakistan’s specialized marketplace for smart inverter refrigerators, deep freezers, and energy-saving cooling solutions client-server platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

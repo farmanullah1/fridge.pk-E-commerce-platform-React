@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@variant dark (.dark &);
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Inter', system-ui, -apple-system, sans-serif;
+  
+  --color-brand-navy-950: #062841;
+  --color-brand-navy-900: #0A3D62;
+  --color-brand-navy-800: #0D4E7C;
+  --color-brand-navy-700: #12639B;
+  --color-brand-navy-600: #1D78B8;
+  --color-brand-coral: #FF6B6B;
+  --color-brand-coral-hover: #E25858;
+  --color-brand-coral-light: #FFECEC;
+  --color-brand-mint: #00B894;
+  --color-brand-mint-hover: #019874;
+  --color-brand-slate: #2D3436;
+  --color-brand-silver: #DFE6E9;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Keyframe animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.03);
+  }
+}
+
+.pulse-glow {
+  animation: pulseGlow 3s infinite ease-in-out;
+}
+
+/* Dynamic Global Theme Adaptation overrides */
+.dark {
+  background-color: #030712; /* slate-950 */
+  color: #f8fafc; /* slate-100 */
+}
+
+.dark .bg-white {
+  background-color: #0f172a !important; /* slate-900 */
+  color: #f8fafc !important;
+}
+
+.dark .bg-slate-50 {
+  background-color: #090d16 !important; /* deep slate-950 offset */
+}
+
+.dark .bg-slate-100,
+.dark .bg-slate-200,
+.dark .bg-slate-100/80 {
+  background-color: #1e293b !important; /* slate-800 */
+}
+
+/* Text adaptations */
+.dark .text-slate-850,
+.dark .text-slate-800,
+.dark .text-slate-900,
+.dark .text-slate-705,
+.dark .text-slate-700,
+.dark .text-brand-navy-950,
+.dark .text-[#0A3D62],
+.dark .text-brand-navy-900 {
+  color: #f8fafc !important;
+}
+
+.dark .text-slate-500,
+.dark .text-slate-600 {
+  color: #94a3b8 !important; /* slate-400 */
+}
+
+.dark .text-slate-400 {
+  color: #64748b !important; /* slate-500 */
+}
+
+/* Borders */
+.dark .border-slate-100,
+.dark .border-slate-200,
+.dark .border border-slate-200,
+.dark .border-slate-300,
+.dark .border-slate-200/50 {
+  border-color: #1e293b !important; /* slate-800 */
+}
+
+/* Shadows */
+.dark .shadow-sm,
+.dark .shadow-md,
+.dark .shadow-lg,
+.dark .shadow-xl,
+.dark .shadow-2xl {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Input Fields elements inside .dark */
+.dark input[type="text"],
+.dark input[type="email"],
+.dark input[type="password"],
+.dark input[type="search"],
+.dark select,
+.dark textarea {
+  background-color: #1e293b !important;
+  color: #f8fafc !important;
+  border-color: #334155 !important;
+}
+
+/* Custom interactive blocks buttons */
+.dark .hover\:bg-slate-50:hover,
+.dark .hover\:bg-slate-100:hover {
+  background-color: #1e293b !important;
+}
